@@ -1,0 +1,40 @@
+# _config.yml
+title: "$ whoami"
+description: "Web Developer & Linux Enthusiast | Terminal-style Portfolio"
+url: "https://msapuan.github.io"
+baseurl: ""
+
+# Jekyll settings
+markdown: kramdown
+permalink: /:year/:month/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sass-converter
+
+# SEO & Social
+twitter:
+  username: your_twitter_handle
+  card: summary
+github:
+  username: msapuan
+logo: /assets/icons/favicon.png
+
+# Build settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from build
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules]
+
+# Minification otomatis (kalau pakai jekyll-compress)
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]

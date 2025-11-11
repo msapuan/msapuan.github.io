@@ -1,7 +1,174 @@
 ---
 layout: default
 title: Projects
+permalink: /projects/
 ---
+
+<div class="terminal-window">
+  <div class="terminal-header">
+    <span class="window-btn close"></span>
+    <span class="window-btn minimize"></span>
+    <span class="window-btn maximize"></span>
+    <span class="window-title">~/projects</span>
+  </div>
+  <div class="terminal-content">
+    
+    <!-- Navigation -->
+    <nav>
+      <a href="/">home</a>
+      <a href="/blog/">blog</a>
+      <a href="/projects/" class="active">projects</a>
+      <a href="https://github.com/msapuan" target="_blank" rel="noopener noreferrer">github</a>
+    </nav>
+
+    <!-- Header -->
+    <div class="prompt">
+      <span class="symbol">$</span> <span class="user">guest</span><span class="at">@</span><span class="host">portfolio</span><span class="symbol">:</span><span class="path">projects</span><span class="symbol">$</span> <span class="command">find . -type f -name "*.md" | head -20</span>
+    </div>
+    <div class="output">
+      <p>Daftar project yang sedang saya kerjakan atau telah selesai:</p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="project-grid">
+      
+      <!-- Project 1: Portfolio Website -->
+      <div class="project-item">
+        <h3><a href="https://github.com/msapuan/msapuan.github.io" target="_blank" rel="noopener noreferrer">
+          Terminal-Style Portfolio
+        </a></h3>
+        <p>Portfolio website modern dengan terminal aesthetic, dark/light mode, dan interactive features seperti GitHub API integration dan comment system.</p>
+        <div class="tags">
+          <span class="tag">Jekyll</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="repo-meta">
+          <span>⭐ Featured</span>
+          <span>🔄 Active</span>
+        </div>
+      </div>
+
+      <!-- Project 2: Linux Tools -->
+      <div class="project-item">
+        <h3><a href="https://github.com/msapuan/linux-tools" target="_blank" rel="noopener noreferrer">
+          Linux Automation Scripts
+        </a></h3>
+        <p>Collection of useful Bash scripts untuk automasi task sehari-hari seperti backup, monitoring, dan system maintenance.</p>
+        <div class="tags">
+          <span class="tag">Bash</span>
+          <span class="tag">Linux</span>
+          <span class="tag">DevOps</span>
+        </div>
+        <div class="repo-meta">
+          <span>📚 Documentation</span>
+          <span>🔄 Active</span>
+        </div>
+      </div>
+
+      <!-- Project 3: Web App Template -->
+      <div class="project-item">
+        <h3><a href="https://github.com/msapuan/web-app-template" target="_blank" rel="noopener noreferrer">
+          Modern Web App Starter
+        </a></h3>
+        <p>Boilerplate project untuk memulai web application dengan setup modern yang sudah include testing, linting, dan deployment pipeline.</p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Docker</span>
+        </div>
+        <div class="repo-meta">
+          <span>🚀 Ready to Use</span>
+          <span>✅ Tested</span>
+        </div>
+      </div>
+
+      <!-- Project 4: API Documentation -->
+      <div class="project-item">
+        <h3><a href="https://github.com/msapuan/api-docs" target="_blank" rel="noopener noreferrer">
+          REST API Documentation Tool
+        </a></h3>
+        <p>Tool untuk auto-generate REST API documentation dari code comments. Support OpenAPI/Swagger spec.</p>
+        <div class="tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">OpenAPI</span>
+          <span class="tag">Docs</span>
+        </div>
+        <div class="repo-meta">
+          <span>🛠️ In Development</span>
+        </div>
+      </div>
+
+      <!-- Project 5: Performance Monitor -->
+      <div class="project-item">
+        <h3><a href="https://github.com/msapuan/perf-monitor" target="_blank" rel="noopener noreferrer">
+          Web Performance Monitor
+        </a></h3>
+        <p>Lightweight monitoring tool untuk track website performance metrics seperti FCP, LCP, CLS dan optimization recommendations.</p>
+        <div class="tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Performance</span>
+          <span class="tag">Analytics</span>
+        </div>
+        <div class="repo-meta">
+          <span>📊 Live Demo</span>
+        </div>
+      </div>
+
+      <!-- Project 6: Contribution Template -->
+      <div class="project-item">
+        <h3><a href="https://github.com/msapuan/open-source-guide" target="_blank" rel="noopener noreferrer">
+          Open Source Contributor Guide
+        </a></h3>
+        <p>Panduan lengkap untuk berkontribusi ke open source projects, mencakup git workflow, code standards, dan best practices.</p>
+        <div class="tags">
+          <span class="tag">Guide</span>
+          <span class="tag">Open Source</span>
+          <span class="tag">Community</span>
+        </div>
+        <div class="repo-meta">
+          <span>📖 Learning Resource</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Recent GitHub Repos -->
+    <div style="margin-top: 3rem; margin-bottom: 2rem;">
+      <div class="prompt">
+        <span class="symbol">$</span> <span class="user">guest</span><span class="at">@</span><span class="host">github</span><span class="symbol">:</span><span class="path">repos</span><span class="symbol">$</span> <span class="command">git fetch --all</span>
+      </div>
+      <div id="repos-output" class="output">
+        Loading recent repositories from GitHub...
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div style="text-align: center; padding: 2rem; background: var(--bg-secondary); border-radius: 6px; border: 1px solid var(--green); margin-top: 2rem;">
+      <p style="margin-bottom: 1rem;">Tertarik dengan project saya?</p>
+      <a href="https://github.com/msapuan" target="_blank" rel="noopener noreferrer" style="
+        display: inline-block;
+        color: var(--bg);
+        background: var(--green);
+        text-decoration: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: all 0.3s;
+      ">
+        👉 Check Out My GitHub →
+      </a>
+    </div>
+
+    <!-- Back to home -->
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/" style="color: var(--green); text-decoration: none; border-bottom: 1px solid var(--green);">
+        ← Back to Home
+      </a>
+    </div>
+
+  </div>
+</div>
 
 <div class="terminal-container">
   <div class="prompt">user@portfolio:~$ <span class="command">git list --all</span></div>

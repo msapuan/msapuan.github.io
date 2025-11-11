@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+<article class="terminal-window">
+  <div class="terminal-header">
+    <span class="window-btn close"></span>
+    <span class="window-btn minimize"></span>
+    <span class="window-btn maximize"></span>
+    <span class="window-title">~/blog/{{ page.title | slugify }}.md</span>
+  </div>
+  <div class="terminal-content">
+    
+    <!-- Navigation -->
+    <nav style="margin-bottom: 1.5rem;">
+      <a href="/blog/">← Back to Blog</a>
+    </nav>
+
+    <!-- Post Header -->
+    <div class="post-header">
+      <h1>{{ page.title }}</h1>
+      <div class="meta">
+        <span>📅 {{ page.date | date: "%B %d, %Y" }}</span>
+        <span>⏱️ {% assign words = page.content | split: " " | size %}{{ words | divided_by: 200 | plus: 1 }} min read</span>
+        {% if page.author %}
+          <span>✍️ {{ page.author }}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Tags -->
+    {% if page.tags and page.tags.size > 0 %}
+      <div class="tags" style="margin-bottom: 1.5rem;">
+        {% for tag in page.tags %}
+          <a href="/blog/tag/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Content -->
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <!-- Back to blog link -->
+    <div style="margin-top: 2rem; text-align: center;">
+      <a href="/blog/" style="color: var(--green); text-decoration: none; border-bottom: 1px solid var(--green);">
+        ← Back to Blog
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<!-- Comments Section -->
+{% if site.comments.enabled %}
+  <div class="comments-section">
+    <h2>💬 Comments</h2>
+    {% if site.comments.provider == "utterances" %}
+      <script src="https://utteranc.es/client.js"
+              repo="{{ site.comments.utterances.repo }}"
+              issue-term="{{ site.comments.utterances.issue_term }}"
+              label="{{ site.comments.utterances.label }}"
+              theme="{{ site.comments.utterances.theme }}"
+              crossorigin="anonymous"
+              async>
+      </script>
+    {% endif %}
+  </div>
+{% endif %}
+
+<!-- Related Posts -->
+<div class="terminal-window" style="margin-top: 2rem;">
+  <div class="terminal-header">
+    <span class="window-btn close"></span>
+    <span class="window-btn minimize"></span>
+    <span class="window-btn maximize"></span>
+    <span class="window-title">~/blog/related</span>
+  </div>
+  <div class="terminal-content">
+    <div class="prompt">
+      <span class="symbol">$</span> <span class="user">guest</span><span class="at">@</span><span class="host">portfolio</span><span class="symbol">:</span><span class="path">~</span><span class="symbol">$</span> <span class="command">grep -r "{{ page.tags | first }}" .</span>
+    </div>
+    <div class="output">
+      {% assign related = site.posts | where_exp: "post", "post.url != page.url" | where_exp: "post", "post.tags contains page.tags[0]" | sample: 3 %}
+      {% if related.size > 0 %}
+        <p>Found {{ related.size }} related posts:</p>
+        <div class="blog-grid" style="margin-top: 1rem;">
+          {% for post in related %}
+            <div class="blog-item">
+              <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+              <div class="date">📅 {{ post.date | date: "%B %d, %Y" }}</div>
+              <p>{{ post.excerpt | strip_html | truncatewords: 12 }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No related posts found. Stay tuned for more content!</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 {% include head.html %}
 <body>
-  <div class="terminal-container">
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon">🌙</span>
+  </button>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="container">
+      <a href="/" class="logo">MS</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="https://github.com/msapuan" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
     {{ content }}
-  </div>
+  </main>
+
+  <!-- Footer -->
   {% include footer.html %}
+
+  <script src="/assets/js/theme-toggle.js"></script>
+  <script src="/assets/js/mobile-menu.js"></script>
 </body>
 </html>

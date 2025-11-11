@@ -2,7 +2,7 @@ name: Deploy Jekyll site to Pages
 
 on:
   push:
-    branches: ["main"] # Ganti dengan branch kamu (main/master)
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -25,13 +25,14 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.1"
-          bundler-cache: true # Ini akan otomatis install dependencies dari Gemfile.lock
+          bundler-cache: true
 
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v4
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 

@@ -12,6 +12,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-sass-converter
+  - jekyll-github-metadata
+  - jekyll-include-cache
 
 # SEO & Social
 twitter:

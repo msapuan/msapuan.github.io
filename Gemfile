@@ -1,24 +1,11 @@
 source "https://rubygems.org"
-ruby "3.2.0"
 
-gem "jekyll", "~> 4.3.0"
-gem "jekyll-feed", "~> 0.17.0"
-gem "jekyll-sitemap", "~> 1.4.0"
-gem "jekyll-seo-tag", "~> 2.8.0"
-gem "jekyll-github-metadata", "~> 2.15.0"
-gem "jekyll-include-cache", "~> 0.2.1"
-gem "jekyll-paginate-v2", "~> 3.0.0"
-gem "jekyll-archives", "~> 2.2.1"
-gem "github-pages", "~> 228"
+# GitHub Pages gem includes Jekyll and most plugins
+gem "github-pages", group: :jekyll_plugins
 
+# Additional plugins not included in github-pages
 group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-sitemap"
-  gem "jekyll-seo-tag"
-  gem "jekyll-github-metadata"
   gem "jekyll-include-cache"
-  gem "jekyll-paginate-v2"
-  gem "jekyll-archives"
 end
 
 group :development do

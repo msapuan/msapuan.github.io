@@ -32,37 +32,17 @@ collections:
     output: true
     permalink: /blog/:year/:month/:day/:title/
 
-# Plugins
+# Plugins (hanya gunakan yang kompatibel dengan GitHub Pages)
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-sass-converter
   - jekyll-github-metadata
   - jekyll-include-cache
-  - jekyll-paginate-v2
-  - jekyll-archives
 
-# Pagination
-pagination:
-  enabled: true
-  per_page: 10
-  permalink: /page/:num/
-  title_suffix: " - Page :num"
-  sort_field: date
-  sort_reverse: true
-
-# Archives (Automatically create pages untuk tags, categories, dll)
-jekyll-archives:
-  enabled: [year, month, tags]
-  layouts:
-    year: archive
-    month: archive
-    tag: archive
-  permalinks:
-    year: /blog/:year/
-    month: /blog/:year/:month/
-    tag: /blog/tag/:name/
+# Pagination (GitHub Pages uses paginate, not paginate-v2)
+paginate: 10
+paginate_path: "/blog/page/:num/"
 
 # SEO & Social Media
 twitter:
@@ -71,7 +51,7 @@ twitter:
 
 github:
   username: msapuan
-  
+
 og_image: /assets/images/og-image.jpg
 logo: /assets/icons/favicon.png
 
